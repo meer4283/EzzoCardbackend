@@ -76,22 +76,44 @@ exit;
                                         <div class="form-group">
                                             <label>Enter Card Price</label>
                                             <input type="text" class="form-control" placeholder="Enter Card Price"
-                                                ng-model="cardprice">
+                                                ng-model="cardprice" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Enter Card Type</label>
-                                            <input type="text" class="form-control" placeholder="Enter Card Type"
-                                                ng-model="cardtype">
-                                        </div>
+                                      
                                         <div class="form-group">
                                             <label>Enter Actual Price</label>
                                             <input type="text" class="form-control" placeholder="Enter Actual Price"
-                                                ng-model="actualprice">
+                                                ng-model="actualprice" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Enter Card Color</label>
-                                            <input type="text" class="form-control" placeholder="Enter Card Color"
-                                                ng-model="cardcolor">
+                                            <select class="form-control" ng-model="cardcolor" name="" id="" required>
+                                            <option value="" >Select Card Color</option>    
+                                            <option value="black" >Black</option>
+                                                <option value="brown" >Brown</option>
+                                                <option value="green" >Green</option>
+                                                <option value="blue" >Blue</option>
+                                            </select>
+                                          
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Card Type</label>
+                                            <select class="form-control" ng-model="cardtype" name="" id="" required>
+                                            <option value="" >Select Card Type</option>    
+                                                <option value="visa" >Visa</option>
+                                                <option value="mastercard" >Master</option>
+                                              
+                                            </select>
+                                          
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Enter Card Currency</label>
+                                            <select class="form-control" ng-model="cardcurr" name="" id="" required>
+                                            <option value="" >Select  Card Currency</option>    
+                                                <option value="USD" >USD</option>
+                                                <option value="CAD" >CAD</option>
+                                              
+                                            </select>
+                                          
                                         </div>
 
 
@@ -137,8 +159,11 @@ $(function () {
                         var app = angular.module('myApp', []);
                         app.controller('myController', function($scope, $http, $window) {
 
+                      
+                     
                             $scope.addcard = () => {
-                                console.log('added');
+                              
+                              
 
                                 $http.post(
                                     "Functions/cardadd.php", {
@@ -146,6 +171,8 @@ $(function () {
                                         'cardtype': $scope.cardtype,
                                         'actualprice': $scope.actualprice,
                                         'cardcolor': $scope.cardcolor,
+                                        'cardcurr': $scope.cardcurr
+                                        
 
                                     }
                                 ).then(function(response) {
@@ -157,12 +184,12 @@ $(function () {
                                             text: "",
                                             icon: "warning",
                                         });
-                                    } else if ($scope.response == "added") {
+                                    } else if ($scope.response == "Added") {
 
 
 
                                         swal({
-                                            title: "Card Added Successfull",
+                                            title: "Card Updated Successfull",
                                             text: "",
                                             icon: "success",
                                             buttons: true,
@@ -177,11 +204,7 @@ $(function () {
 
                                 });
                             } //Function End
-
-
-
-                            //Functyion start
-
+                            //
 
 
 

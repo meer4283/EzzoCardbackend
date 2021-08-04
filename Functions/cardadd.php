@@ -11,8 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cardtype = $registerData->cardtype;
     $actualprice = $registerData->actualprice;
     $cardcolor = $registerData->cardcolor;
+    $cardcurr = $registerData->cardcurr;
 
-$insert=("INSERT INTO `cards` (`id`, `cardprice`, `cardtype`, `actualprice`, `cardcolor`) VALUES (NULL, '$cardprice', '$cardtype', '$actualprice', '$cardcolor');");
+$insert=("INSERT INTO `cards` (`id`, `cardprice`, `cardtype`, `actualprice`, `cardcolor`, `card_currency`) VALUES (NULL, '$cardprice', '$cardtype', '$actualprice', '$cardcolor','$cardcurr');");
 
 if(mysqli_query($link, $insert)){
     mysqli_close($link);
