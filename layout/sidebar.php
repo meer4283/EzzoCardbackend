@@ -152,8 +152,50 @@
                         </li>
 
 
+
+
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Coupons
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="add-packages.php" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Coupons</p>
+                                    </a>
+                                    
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                        
                     </ul>
                     </li>
+
+                    
+                    
+                    
+                        
+                            
+
+
+
+
+
 
 
                     </ul>
